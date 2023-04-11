@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>주문하기</title>
+  
+</head>
+<body>
+  <h2>책 구매</h2>
+  <div id="container">
+    <form>
+        <ul>
+            <li>
+                <label><input type="checkbox" value="s_3">자바 기초</label>
+                <input id="java" type="number" min="0" max="5" value="1"> 개 (최대 5개) 
+            </li> 
+            <li>
+                <label><input type="checkbox" value="s_3">자바 심화</label>
+                <input id="java2" type="number" min="0" max="3" value="2"> 개 (최대 3개) 
+            </li>
+            <li>
+                <label><input type="checkbox" value="s_3">DB 기초</label>
+                <input id="db" type="number" min="0" max="5" value="0"> 개 (최대 5개) 
+            </li>
+            <li>
+                <label><input type="checkbox" value="s_3">HTML / CSS</label>
+                <input id="hc" type="number" min="0" max="3" value="0"> 개 (최대 3개) 
+            </li>
+        </ul>      
+      <div>
+        <input type = "button" id="orderBtn" value="주문하기"> 
+
+      </div>        
+    </form>
+  </div>  
+</body>
+</html>
+<script>    
+
+    var button = document.querySelector('#orderBtn');
+
+    button.onclick = function() {
+
+        var java = document.querySelector('#java');  /* body 안에 id 를 가져온다 */
+        console.log(java.value);    /*value 값*/    /*숫자가 아니고 문자열로 가져옴*/
+        if(parseInt(java.value) === 0) {       /*  === 은 타입에 영향이 있음 0==="0" 같지않다고나옴*/
+                /*문자열로 리턴 받기때문에 숫자형으로 바꿔서 계산해준다*/
+        console.log("0개 확인");
+        }
+        var java2 = document.querySelector('#java2');   /* 이친구들은 클릭하고 value 를 세야해서 onclick 밑에 정의됨*/
+        var db = document.querySelector('#db');
+        var hc = document.querySelector('#hc');
+
+        var sum = parseInt(java.value) + parseInt(java2.value) + parseInt(db.value) + parseInt(hc.value);
+
+        if(sum <= 0) {  /* 마이너스 감지용으로 <= 로 쓰는게 좋음*/
+            alert("구매 개수가 0개입니다 수량 다시 확인");
+            return;     /* return 없으면 밑에 조건문도 실행하게됨; */
+        } 
+         
+        if (confirm ("총 구매 개수가 " + parseInt(sum) + "개가 맞습니까?")){
+            alert("구매 완료")
+        }
+
+    }
+
+</script>

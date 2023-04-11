@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-size: 2rem;
+        }
+    </style>
+
+</head>
+<body>
+
+    
+    
+</body>
+</html>
+
+<script>
+
+    var date = new Date();  /* 자바 객체 생성하는거랑 비슷*/
+    document.write("<b>" + date + "</b><br>");    /* 실제 화면에 출력함 (body에) */
+    document.write(date.toLocaleTimeString() + "<br>");      /* 시간만 나옴 */
+    document.write("년도 : " + date.getFullYear() + "<br>");      /* 시간만 나옴 */
+    document.write("월 : " + (date.getMonth()+1) + "<br>");      /* Month는 0부터 나옴 */
+    document.write("일 : " + date.getDate() + "<br>");     
+    document.write("시 : " + date.getHours() + "<br>");    
+    document.write("분 : " + date.getMinutes() + "<br>");  
+    document.write("초 : " + date.getSeconds() + "<br>");  
+    console.log(date);
+
+</script>

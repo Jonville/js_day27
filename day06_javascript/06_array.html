@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-size: 2rem; text-align: center;">
+    
+
+</body>
+</html>
+
+<script>
+
+    var nameArray = ["홍길동" , "유재석" , 1 , "강호동" , 3.141592 , "박명수"
+                      ,{name : "홍길동", age : 20}];
+                /* 문자열, 숫자, 실수 , 해쉬맵 다 들어갈수있음 */
+    for(var i = 0 ; i < nameArray.length ; i++) {
+        document.write(nameArray[i] + "<br>");
+    }
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+
+    for(var i = 0 ; i < 3 ; i++){
+        console.log("test");
+    }
+
+    var num = [10, 20, 30];
+    var chars = ["a", "b", "c", "d" , "e"];
+
+    var sum1 = num.concat(chars);   /* 이어붙힌다는 뜻*/
+    document.write(sum1);
+    document.write("<br>");
+    document.write(num);
+
+    document.write("<br>");
+    var str1 = num.join('/');       /*원하는 구분자로 합쳐짐*/
+    document.write(str1);
+
+    document.write("<br>");
+    var arr1 = num.push(40 , 50);   /* push 값을 넣는거 (뒤에) / 원본에 영향를 줌*/
+    document.write(arr1);           /*얘는 갯수 출력이됨*/
+    document.write("<br>");
+    document.write(num);
+    
+    num.unshift(0);                 /* 값을 넣음 (앞에)*/
+    document.write("<br>");
+    document.write(num);
+
+    var n1 = num.pop();             /* 값을 뺌 (뒤에) */
+    document.write("<br>");
+    document.write(n1);             /* 뭘 뺏는지 확인 */
+    document.write("<br>");
+    document.write(num);
+
+    num.shift();                    /* 값을 뺌 (앞에) */
+    document.write("<br>");
+    document.write(num);
+
+</script>
